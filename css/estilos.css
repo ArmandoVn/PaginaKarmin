@@ -1,17 +1,38 @@
 nav{
-	background: #C6C6C6;
+	background: black;
 }
 
-nav > a{
-	color: black;
+a.nav-link{
+	color: #DCDCDC;
 }
 
-nav > a:hover{
-	color: #777777; 
+a.nav-link:hover{
+	color: white;
 }
+
+a.karmin:hover{
+	color: #BABABA; 
+}
+
+.footer-color{
+	background:#0B0C13;
+}
+
+.footer-title{
+	color: #646464
+}
+
+.footer-text{
+	color: #AFAFAF;
+}
+
 .nav-item{
-	color: #4E4E4E;
 	margin-left: 2em;
+}
+
+.karmin{
+	font-size: 1.8em;
+	color: #FFFFFF;
 }
 
 .carrouselSize{
@@ -26,4 +47,58 @@ nav > a:hover{
 
 .card-text{
 	text-align: justify;
+}
+
+.tarjeta{
+	display: inline-block;
+}
+
+.tajeta-departamentos{
+	position: relative;
+	height: 20em;
+	width: 100%;
+}
+
+.contenido-tarjeta{
+	display: inline-block;
+	position: relative;
+	width: 49.5%;
+	max-height: 100%;
+}
+
+div.tajeta-departamentos:hover > div > img.img-departamentos{
+	filter: brightness(100%);
+	/*filter: blur(0.5px);*/
+}
+
+.img-departamentos-contenedor{
+	position: relative;
+	width: 49.5%;
+	height: 100%;
+	/*Difunmina la imagen*/
+	/*filter: blur(2px);*/
+	display: inline-block;
+}
+
+.img-departamentos{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	filter: brightness(60%);
+	transition: filter 0.8s;
+}
+
+a.btn:hover{
+	font-size: 120%;
+	color: #D90101;
+}
+
+.contenedor-enlaces{
+	position: absolute;
+	height: 10em;
+	width: 100%;
+}
+
+.btn{
+	color: #D90101;
 }

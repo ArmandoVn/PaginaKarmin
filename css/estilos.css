@@ -1,7 +1,12 @@
 *{
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+html, body{
+	height: 100%;
+	width: 100;
 }
 
 .header{
@@ -18,6 +23,19 @@
 	margin : 0px;
 	font-stretch: expanded;
 	color: white;
+	animation-name: logo;
+	animation-duration: 2s;
+}
+
+@keyframes logo{
+	0%{
+		opacity: 0;
+		transform: scale(.1) rotate(180deg);
+	}
+	100%{
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 .line{
@@ -161,7 +179,7 @@ nav{
 
 .card-title{
 	position: relative;
-	width: 100;
+	width: 100%;
 	text-align: center;
 	font-size: 1.2em;
 	color: white;
@@ -175,36 +193,51 @@ nav{
 	font-size: .8em;
 }
 
-.tajeta-departamentos{
-	height: 30em;
-	width: 100%;
-}
-
-.contenido-tarjeta{
-	display: inline-block;
+.departament-card{
 	position: relative;
-	width: 49.5%;
-	max-height: 100%;
+	width: 90%;
+	height: 22em;
+	margin: 3% 5%;
+	box-sizing: border-box;
+	overflow: hidden;
 }
 
-div.tajeta-departamentos:hover > div > img.img-departamentos{
+.half-departament-card{
+	position: relative;
+	width: 49.4%;
+	height: 100%;
+	display: inline-block;
+}
+
+article.departament-card:hover > div > img.img-departament{
 	filter: brightness(100%);
 	/*filter: blur(0.5px);*/
 }
 
-.img-departamentos-contenedor{
-	width: 49.5%;
+.img-departament{
+	width: 100%;
 	height: 100%;
 	/*Difunmina la imagen*/
 	/*filter: blur(2px);*/
 	display: inline-block;
-}
-
-.img-departamentos{
-	width: 100%;
-	height: 100%;
 	filter: brightness(60%);
 	transition: filter 0.8s;
+	position: absolute;
+	top: 20px;
+}
+
+h2.card-title{
+	color: black;
+}
+
+.departament-card-content{
+	position: absolute;
+	display: inline-block;
+	width: auto;
+	height: auto%;
+	text-align: justify;
+	vertical-align: top;
+	padding: 5% 5%;
 }
 
 .copyright{

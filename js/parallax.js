@@ -13,12 +13,12 @@ $(document).ready(function(){
 
     if (barra > $('#dibujo').offset().top) {
       $('#dibujo').css({
-        'top':'-' + (barra - $('#dibujo').offset().top) * 0.1 + 'px'
+        'top':'-' + (barra - $('#dibujo').offset().top) * 0.2 + 'px'
       })
     }
 
     //console.log(barra + " " + $('div.line').offset().top);
-    console.log(barra + " " + $('#dibujo2').offset().top);
+    //console.log(barra + " " + $('#dibujo2').offset().top);
     if (barra > $('#dibujo2').offset().top) {
       $('#dibujo2').css({
         'top':'-' + (barra - $('#dibujo2').offset().top) * 0.1 + 'px'

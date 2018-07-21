@@ -27,35 +27,51 @@
 
 		<section>
 
+
+			<?
+			$usuario = "postgres";
+			$contraseña = "1Vnarmando";
+
+			try {
+			    $mbd = new PDO('pgsql:host=localhost;dbname=paginakarmin', $usuario, $contraseña);
+			    //Sentencias preparadas, son mas repidas que las sentencias normales y
+			    //evitan la insercion de codigo sql.
+			    // $sql = "INSERT INTO departamento (nombre) VALUES (':nombre')";
+			    // $sentencia = $mbd->prepare($sql);
+			    // $sentencia->bindParam(':nombre',$nombre);
+			    // $nombre = 'bastidores';
+			    // $sentencia->execute();
+			    $sql = 'SELECT * from departamento';
+			    foreach($mbd->query($sql) as $fila) {
+			      print "<article class=\"departament-card\">
+			              <div class=\"half-departament-card\">
+			                <div class=\"departament-card-content\">";
+			            print "<h2 class=\"card-title\">".$fila['nombre']."</h2>
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+												sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+												 Ut enim ad minim veniam, quis nostrud exercitation ullamco
+												 laboris nisi ut aliquip ex ea commodo consequat.
+												 Duis aute irure dolor in reprehenderit in voluptate velit
+												 esse cillum dolore eu fugiat nulla pariatur. Excepteur
+												 sint occaecat cupidatat non proident, sunt in culpa qui
+												 officia deserunt mollit anim id est laborum.<\p>
+			                </div>
+			              </div>
+			            </article>";
+			    }
+			    unset($fila);//Se utiliza para desreferenciar del ultimo valor del array la variable auxiliar
+			                //del foreach para de esta forma no sobreescribir valores del array.
+			    $mbd = null;
+			} catch (PDOException $e) {
+			    print "¡Error!: " . $e->getMessage() . "<br/>";
+			    echo "pilin";
+			    die();
+			}
+			?>
+
 			<article class="departament-card">
 				<div class="half-departament-card">
 					<img src="img/Dibujo.jpg" alt="Mural" class="img-departament" id="dibujo">
-				</div>
-				<div class="half-departament-card">
-					<div class="departament-card-content">
-						<h2 class="card-title">Acuarelas</h2>
-						<p>Aqui podras encontrar todo lo que necesitas para ese dibujo creativo y bonito que tienes en mente.</p>
-						<a href="#">Lapices</a>
-					</div>
-				</div>
-			</article>
-
-			<article class="departament-card">
-				<div class="half-departament-card">
-					<div class="departament-card-content">
-						<h2 class="card-title">Acuarelas</h2>
-						<p>Aqui podras encontrar todo lo que necesitas para ese dibujo creativo y bonito que tienes en mente.</p>
-						<a href="#">Lapices</a>
-					</div>
-				</div>
-				<div class="half-departament-card">
-					<img src="img/Dibujo.jpg" alt="Mural" class="img-departament">
-				</div>
-			</article>
-
-			<article class="departament-card">
-				<div class="half-departament-card">
-					<img src="img/Dibujo.jpg" alt="Mural" class="img-departament">
 				</div>
 				<div class="half-departament-card">
 					<div class="departament-card-content">
@@ -79,19 +95,6 @@
 				</div>
 			</article>
 
-			<article class="departament-card">
-				<div class="half-departament-card">
-					<img src="img/Dibujo.jpg" alt="Mural" class="img-departament">
-				</div>
-				<div class="half-departament-card">
-					<div class="departament-card-content">
-						<h2 class="card-title">Acuarelas</h2>
-						<p>Aqui podras encontrar todo lo que necesitas para ese dibujo creativo y bonito que tienes en mente.</p>
-						<a href="#">Lapices</a>
-					</div>
-				</div>
-			</article>
-			
 			</div>
 		</section>
 
